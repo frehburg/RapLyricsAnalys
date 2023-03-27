@@ -24,6 +24,11 @@ def preprocess(list_of_words):
     # IMPORTANT: remove punctuation but leave in apostrophes
 
     ### i think converting the lyrics to lower() would be good too
+    # this should be included too:
+# primary artists -> separate by comma
+#songs_data["Primary Artists"] = songs_data["Primary Artists"].str.replace(" & ",",")
+#songs_data["Primary Artists"] = songs_data["Primary Artists"].str.replace(", ", ",")
+#songs_data["Primary Artists"] = songs_data["Primary Artists"].str.split(",")
 
     pass
 
