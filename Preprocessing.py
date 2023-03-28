@@ -6,31 +6,32 @@ import pandas as pd
 
 def create_rap_df():
     # load in top50_2018_2022.csv
+    df = pd.read_csv("data/top50_2018_2022.csv")
     # this csv has a column with the lyrics in one string
 
     # apply preprocess function to each list in the lyrics column
+    df["Lyrics"] = df["Lyrics"].apply(lambda x: preprocess(x))
 
-    # call create_word_count_dict
-
-    pass
-
-    # output
+    return df
 
 
-def preprocess(list_of_words):
-    # write alternatives for format list_of_words = ['a', 'b', 'c'] or df['col']
-    # 1. split the lyrics into a list of words
+def preprocess(lyrics):
+
+    # 1. split
+    lyrics = lyrics.split()
     # 2. lemmatization to convert words to their root form
     # IMPORTANT: remove punctuation but leave in apostrophes
 
     ### i think converting the lyrics to lower() would be good too
+
+    # -------- No is not what we want (atleast Bas and Filipp) --------------
     # this should be included too:
 # primary artists -> separate by comma
 #songs_data["Primary Artists"] = songs_data["Primary Artists"].str.replace(" & ",",")
 #songs_data["Primary Artists"] = songs_data["Primary Artists"].str.replace(", ", ",")
 #songs_data["Primary Artists"] = songs_data["Primary Artists"].str.split(",")
 
-    pass
+    return lyrics
 
 
 def create_word_count_dict(df):
