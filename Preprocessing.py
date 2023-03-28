@@ -10,7 +10,7 @@ def create_rap_df():
     # this csv has a column with the lyrics in one string
 
     # we should split the primary artists for explode to work
-    df["Primary Artists"] = df["Primary Artists"].str.replace(" & ",",")
+    df["Primary Artists"] = df["Primary Artists"].str.replace(" & ", ",")
     df["Primary Artists"] = df["Primary Artists"].str.replace(", ", ",")
     df["Primary Artists"] = df["Primary Artists"].str.split(",")
 
@@ -23,19 +23,16 @@ def create_rap_df():
 def preprocess(lyrics):
 
     # 1. split
-    lyrics = lyrics.split()
+    lyrics = lyrics.lower().split()
     # 2. lemmatization to convert words to their root form
     # IMPORTANT: remove punctuation but leave in apostrophes
-
-    ### i think converting the lyrics to lower() would be good too
-
     return lyrics
 
 
 def create_word_count_dict(df):
     # create a dictionary of words and their counts and their relative frequencies
     # without grouping, just combine all lists into one list and count
-    words = list(itertools.chain.from_iterable(df['Lyrics']))
+    words = df["Lyrics"].sum()
     return dict(Counter(words))
 
 def create_word_count_dict_grouped(df, artists=False, year=False):
