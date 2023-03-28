@@ -29,13 +29,6 @@ def preprocess(lyrics):
 
     ### i think converting the lyrics to lower() would be good too
 
-    # -------- No is not what we want (atleast Bas and Filipp) --------------
-    # this should be included too:
-# primary artists -> separate by comma
-#df["Primary Artists"] = df["Primary Artists"].str.replace(" & ",",")
-#df["Primary Artists"] = df["Primary Artists"].str.replace(", ", ",")
-#df["Primary Artists"] = df["Primary Artists"].str.split(",")
-
     return lyrics
 
 
