@@ -9,6 +9,11 @@ def create_rap_df():
     df = pd.read_csv("data/top50_2018_2022.csv")
     # this csv has a column with the lyrics in one string
 
+    # we should split the primary artists for explode to work
+    df["Primary Artists"] = df["Primary Artists"].str.replace(" & ",",")
+    df["Primary Artists"] = df["Primary Artists"].str.replace(", ", ",")
+    df["Primary Artists"] = df["Primary Artists"].str.split(",")
+
     # apply preprocess function to each list in the lyrics column
     df["Lyrics"] = df["Lyrics"].apply(lambda x: preprocess(x))
 
@@ -27,9 +32,9 @@ def preprocess(lyrics):
     # -------- No is not what we want (atleast Bas and Filipp) --------------
     # this should be included too:
 # primary artists -> separate by comma
-#songs_data["Primary Artists"] = songs_data["Primary Artists"].str.replace(" & ",",")
-#songs_data["Primary Artists"] = songs_data["Primary Artists"].str.replace(", ", ",")
-#songs_data["Primary Artists"] = songs_data["Primary Artists"].str.split(",")
+#df["Primary Artists"] = df["Primary Artists"].str.replace(" & ",",")
+#df["Primary Artists"] = df["Primary Artists"].str.replace(", ", ",")
+#df["Primary Artists"] = df["Primary Artists"].str.split(",")
 
     return lyrics
 
