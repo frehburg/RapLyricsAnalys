@@ -6,7 +6,7 @@ import pandas as pd
 
 def create_rap_df():
     # load in top50_2018_2022.csv
-    df = pd.read_csv("data/top50_2018_2022.csv")
+    df = pd.read_csv("data/top50_2018_2022.csv", encoding = 'unicode_escape')
     # this csv has a column with the lyrics in one string
 
     # we should split the primary artists for explode to work
