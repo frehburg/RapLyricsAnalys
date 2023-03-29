@@ -4,8 +4,11 @@ Participators:
 - Filipp Dokienko
 - Filip Rehburg
 
+## IMPORTANT: Main notebook
+final_analysis.ipynb [on github](https://github.com/frehburg/RapLyricsAnalysis/blob/rap/final_analysis.ipynb)
+
 # Video
-https://www.canva.com/design/DAFemwUTPh4/38QICNVbL0C-fKpDpnAqGw/watch?utm_content=DAFemwUTPh4&utm_campaign=share_your_design&utm_medium=link&utm_source=shareyourdesignpanel
+[Video on canva](https://www.canva.com/design/DAFemwUTPh4/38QICNVbL0C-fKpDpnAqGw/watch?utm_content=DAFemwUTPh4&utm_campaign=share_your_design&utm_medium=link&utm_source=shareyourdesignpanel)
 
 ## Summary of project 
 In this presentation we will discuss if rappers are eloquent geniuses or as obscene as many assume us to be. For this, we looked at the yearly top 50 rap songs of the last 5 years and investigated their lyrics to find out, let’s have a look.
